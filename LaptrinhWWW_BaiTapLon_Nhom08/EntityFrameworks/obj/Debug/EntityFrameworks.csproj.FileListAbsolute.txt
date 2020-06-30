@@ -26,3 +26,17 @@ F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\E
 F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.pdb
 F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.Migrations.init.resources
 F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.GenerateResource.cache
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll.config
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.pdb
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.dll
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.dll
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.xml
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.xml
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csprojAssemblyReference.cache
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.Migrations.init.resources
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.GenerateResource.cache
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CoreCompileInputs.cache
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CopyComplete
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.dll
+E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.pdb
