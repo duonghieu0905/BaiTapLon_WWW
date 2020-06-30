@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessModel\NewsDBContext.cs" />
-    <Compile Include="Migrations\202006200857563_initial.cs" />
-    <Compile Include="Migrations\202006200857563_initial.designer.cs">
-      <DependentUpon>202006200857563_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202006300417360_init.cs" />
+    <Compile Include="Migrations\202006300417360_init.designer.cs">
+      <DependentUpon>202006300417360_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
@@ -71,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006200857563_initial.resx">
-      <DependentUpon>202006200857563_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006300417360_init.resx">
+      <DependentUpon>202006300417360_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

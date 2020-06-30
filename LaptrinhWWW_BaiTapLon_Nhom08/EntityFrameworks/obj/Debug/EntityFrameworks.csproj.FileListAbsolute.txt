@@ -1,0 +1,28 @@
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll.config
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.pdb
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.dll
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.dll
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.xml
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.xml
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CoreCompileInputs.cache
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CopyComplete
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.dll
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.pdb
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csprojAssemblyReference.cache
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.Migrations.initial.resources
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.GenerateResource.cache
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll.config
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.pdb
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.dll
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.dll
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.xml
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.xml
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csprojAssemblyReference.cache
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CoreCompileInputs.cache
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CopyComplete
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.dll
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.pdb
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.Migrations.init.resources
+F:\LapTrinhWWW_BaiTapLon\New folder\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.GenerateResource.cache

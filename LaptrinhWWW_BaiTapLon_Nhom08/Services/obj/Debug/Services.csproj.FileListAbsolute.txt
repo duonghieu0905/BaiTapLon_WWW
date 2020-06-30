@@ -1,0 +1,6 @@
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Services.dll
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Services.pdb
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.csprojAssemblyReference.cache
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.dll
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.pdb

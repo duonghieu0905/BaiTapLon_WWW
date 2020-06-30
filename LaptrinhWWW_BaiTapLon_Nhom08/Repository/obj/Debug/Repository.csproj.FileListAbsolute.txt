@@ -1,0 +1,2 @@
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+F:\LapTrinhWWW_BaiTapLon\LaptrinhWWW_BaiTapLon_Nhom08\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
