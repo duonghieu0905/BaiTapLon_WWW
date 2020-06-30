@@ -15,6 +15,8 @@ namespace Entities
         [Required(ErrorMessage = "Vui lòng không để trống nội dung bài báo")]
         [Display(Name = "Nội dung")]
         public string Description { get; set; }
+        [Display(Name = "Hình ảnh")]
+        public string Image { get; set; }
         [Required(ErrorMessage = "Vui lòng không để trống tiêu đề bài báo")]
         [Display(Name = "Tiêu đề")]
         public string Title { get; set; }
