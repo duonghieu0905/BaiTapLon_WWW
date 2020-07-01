@@ -20,6 +20,7 @@ E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entiti
 C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\bin\Debug\Entities.dll.config
 C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\bin\Debug\Entities.dll
 C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\bin\Debug\Entities.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\obj\Debug\Entities.dll
 C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\obj\Debug\Entities.pdb
 C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entities\bin\Debug\EntityFramework.dll
