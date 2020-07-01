@@ -3263,7 +3263,7 @@ hr {
 .whats-news-area .nav-tabs .nav-link, .about-area .nav-tabs .nav-link, .contact-section .nav-tabs .nav-link {
     border: 0;
     border-bottom: 2px solid transparent;
-    padding: 10px 20px;
+    padding: 20px 10px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {

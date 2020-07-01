@@ -21,5 +21,10 @@ namespace UI.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult aaa()
+        {
+            return View();
+        }
     }
 }
