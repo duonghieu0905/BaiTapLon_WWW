@@ -25,3 +25,19 @@ E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Servic
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.csproj.CopyComplete
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.dll
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Services.dll.config
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Services.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Services.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\EntityFramework.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\EntityFrameworks.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Repository.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Service.Interfaces.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\EntityFrameworks.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Repository.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\Service.Interfaces.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\EntityFramework.xml
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Services\obj\Debug\Services.pdb

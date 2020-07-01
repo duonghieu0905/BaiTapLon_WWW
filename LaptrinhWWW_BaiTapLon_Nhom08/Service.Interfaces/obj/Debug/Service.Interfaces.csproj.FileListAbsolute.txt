@@ -19,3 +19,15 @@ E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Servic
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\obj\Debug\Service.Interfaces.csproj.CopyComplete
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\obj\Debug\Service.Interfaces.dll
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\obj\Debug\Service.Interfaces.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\Service.Interfaces.dll.config
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\Service.Interfaces.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\Service.Interfaces.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\EntityFramework.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\EntityFrameworks.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\EntityFrameworks.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\EntityFramework.xml
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\obj\Debug\Service.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\obj\Debug\Service.Interfaces.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Service.Interfaces\obj\Debug\Service.Interfaces.pdb

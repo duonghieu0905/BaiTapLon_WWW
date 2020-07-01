@@ -40,3 +40,15 @@ E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\Entity
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.CopyComplete
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.dll
 E:\Lap Trinh WWW\Linh\btl_ver3\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll.config
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFrameworks.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.xml
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.Migrations.init.resources
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csproj.GenerateResource.Cache
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.dll
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.pdb
+C:\Users\Lynh\Desktop\BTLon_WWW\BaiTapLon_WWW\LaptrinhWWW_BaiTapLon_Nhom08\EntityFrameworks\obj\Debug\EntityFrameworks.csprojResolveAssemblyReference.cache
