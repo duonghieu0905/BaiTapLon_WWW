@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    document.getElementById("Image").style.display = "none";
+    document.getElementById("Image").style.display = "none"; //bỏ
     CKEDITOR.replace("Description");
     CKEDITOR.instances["Description"].on('change', function () {
         var obj = CKEDITOR.instances["Description"].getData();
@@ -13,6 +13,17 @@
             $("#Image").val(str);
         };
         finder.popup();
+    });
+    $('.checktopic').change(function () {
+        var checkedValue = "";
+        var inputElements = document.getElementsByClassName('checktopic');
+        for (var i = 0; inputElements[i]; ++i) {
+            if (inputElements[i].checked) {
+                checkedValue = checkedValue+= inputElements[i].value+",";
+            }
+        }
+        checkedValue = checkedValue.substring(0, checkedValue.length-1);
+        $('#topicstring').val(checkedValue);
     });
 
 });
