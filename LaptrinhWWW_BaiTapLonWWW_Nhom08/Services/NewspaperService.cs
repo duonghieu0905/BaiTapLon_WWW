@@ -45,7 +45,7 @@ namespace Services
                 exits.Title = newspaper.Title;
                 repository.Update(exits);
             }
-            return null;
+            return exits;
         }
     }
 }
