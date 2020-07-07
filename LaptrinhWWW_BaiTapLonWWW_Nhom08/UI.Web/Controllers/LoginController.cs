@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntityFrameworks.Model;
+using Microsoft.AspNetCore.Mvc;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,6 @@ namespace UI.Web.Controllers
         {
             return View();
         }
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
         public ActionResult login(string username, string password)
         {
             if (username != null || password != null)
@@ -37,7 +34,7 @@ namespace UI.Web.Controllers
                     if (account.Password == password)
                     {
                         //success
-                        var active = account.Active;
+                        Session["account"] = account;
                         Response.Write("<script>alert('Login Success!');</script>"); //works great
                         return RedirectToAction("Index", "Home");
                     }
@@ -58,7 +55,48 @@ namespace UI.Web.Controllers
         }
         public ActionResult SignUp()
         {
-            return View();
+            Session["account"] = null;
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult ChangePass(string passold,string passnew)
+        {
+            if (passold != null && passnew != null)
+            {
+                if ((Account)Session["account"] != null)
+                {
+                    var account = (Account)Session["account"];
+                    var accountchange = _acccountService.GetAll().FirstOrDefault(x => x.AccountName == account.AccountName);
+                    if (accountchange.Password == passold)
+                    {
+                        accountchange.Password = passnew;
+                        var model = _acccountService.UpdateAccount(accountchange);
+                        if (model.Password != passold)
+                        {
+                            Session["account"] = null;
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Thay đổi password lỗi!');</script>"); //works great
+                            return View();
+                        }
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Sai mật khẩu!');</script>"); //works great
+                        return View();
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('Chưa login!');</script>"); //works great
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Services
                 exits.Password = account.Password;
                 repository.Update(exits);
             }
-            return null;
+            return exits;
         }
     }
 }

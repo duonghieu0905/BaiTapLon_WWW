@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "ChangePass";
+}
+
+<h2>ChangePass</h2>
+
+<form method="post" name="form1" action="/Login/ChangePass" enctype="multipart/form-data">
+    Current Password:<br /> <input type="password" id="passold" name="passold" value="@ViewBag.passold" /><hr/>
+    New Password:<br /> <input type="password" id="passnew" name="passnew" value="@ViewBag.passnew" /><hr />
+    Confirm New Password:<br /> <input type="password" id="passConfirm" name="passConfirm" value="@ViewBag.passConfirm" /><hr />
+    <input type="submit" value="Save" />
+</form>

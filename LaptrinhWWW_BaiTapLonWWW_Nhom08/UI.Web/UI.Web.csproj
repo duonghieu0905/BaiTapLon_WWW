@@ -1389,6 +1389,8 @@
     <Content Include="Uploads\_thumbs\Images\TestHinh%281%29.jpg" />
     <Content Include="Uploads\_thumbs\Images\TestHinh.jpg" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Approval\Index.cshtml" />
+    <Content Include="Views\Approval\ReviewNews.cshtml" />
     <None Include="Views\CacTrang\about.cshtml" />
     <None Include="Views\CacTrang\blog.cshtml" />
     <None Include="Views\CacTrang\categori.cshtml" />
@@ -1416,11 +1418,11 @@
     <Content Include="Views\Login\aaa.cshtml" />
     <Content Include="Views\News\CreateNews.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\ChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\About\" />
-    <Folder Include="Views\Approval\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
