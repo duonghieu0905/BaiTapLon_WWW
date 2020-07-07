@@ -1377,10 +1377,10 @@
     <Content Include="Views\Login\login.cshtml" />
     <Content Include="Views\Login\SignUp.cshtml" />
     <Content Include="Views\News\GetView.cshtml" />
-    <Content Include="Views\News\GetViewaaa.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Login\aaa.cshtml" />
     <Content Include="Views\News\CreateNews.cshtml" />
+    <Content Include="Views\News\UpdateNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

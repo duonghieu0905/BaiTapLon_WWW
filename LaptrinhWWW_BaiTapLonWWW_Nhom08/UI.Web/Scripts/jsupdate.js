@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+   
     document.getElementById("Image").style.display = "none"; //bỏ
     CKEDITOR.replace("Description");
     CKEDITOR.instances["Description"].on('change', function () {

@@ -17,7 +17,7 @@ namespace UI.Web.Controllers
             List<eNewspaper> lst = new List<eNewspaper>();
             foreach (var item in list)
             {
-                lst.Add(new eNewspaper() { Active = item.Active, Description = item.Description, Image = item.Image, Journalist = item.Journalist, NewsId = item.NewsId, PublicationDate = (DateTime)item.PublicationDate, Title = item.Title });
+                //lst.Add(new eNewspaper() { Active = item.Active, Description = item.Description, Image = item.Image, Journalist = item.Journalist, NewsId = item.NewsId, PublicationDate = (DateTime)item.PublicationDate, Title = item.Title });
             }
             return View(lst);
         }
