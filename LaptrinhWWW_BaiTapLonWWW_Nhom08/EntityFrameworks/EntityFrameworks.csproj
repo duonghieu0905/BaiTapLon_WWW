@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessModel\NewsDBContext.cs" />
-    <Compile Include="Migrations\202007011120385_Init.cs" />
-    <Compile Include="Migrations\202007011120385_Init.designer.cs">
-      <DependentUpon>202007011120385_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202007080703276_init.cs" />
+    <Compile Include="Migrations\202007080703276_init.designer.cs">
+      <DependentUpon>202007080703276_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
@@ -71,10 +71,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Scripts\jquery-3.4.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007011120385_Init.resx">
-      <DependentUpon>202007011120385_Init.cs</DependentUpon>
+    <Content Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007080703276_init.resx">
+      <DependentUpon>202007080703276_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

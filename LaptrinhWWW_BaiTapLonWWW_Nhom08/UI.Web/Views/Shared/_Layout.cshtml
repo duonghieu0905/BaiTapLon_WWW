@@ -65,7 +65,7 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/main.js"></script>
-
+    @RenderSection("scripts", required: false)
 </head>
 
 <body>
@@ -144,14 +144,17 @@
                                             <li><a href="https://localhost:44311/Category/Index">Danh Mục</a></li>
                                             <li><a href="https://localhost:44311/About/Index">About</a></li>
                                             @*<li>
-                                                    <a href="#">Trang</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="elements.html">Element</a></li>
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="single-blog.html">Blog Chi Tiết</a></li>
-                                                        <li><a href="details.html">Danh Mục Chi tiết</a></li>
-                                                    </ul>
-                                                </li>*@
+            <a href="#">Trang</a>
+            <ul class="submenu">
+                <li><a href="elements.html">Element</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="single-blog.html">Blog Chi Tiết</a></li>
+                <li><a href="details.html">Danh Mục Chi tiết</a></li>
+            </ul>
+        </li>*@
+                                            <li><a href="/News/CreateNews">Viết báo</a></li>
+                                            <li><a href="/FeedBack/Index"> Danh sách phản hồi</a></li>
+                                            <li><a href="/FeedBack/CreateFeedBack"> Phản hồi</a></li>
 
                                         </ul>
                                     </nav>
