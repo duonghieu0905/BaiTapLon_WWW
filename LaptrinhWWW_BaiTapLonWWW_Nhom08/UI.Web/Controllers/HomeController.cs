@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Entities;
+using EntityFrameworks.Model;
 using Services;
 
 namespace UI.Web.Controllers
@@ -13,11 +14,15 @@ namespace UI.Web.Controllers
         NewspaperService serNews = new NewspaperService();
         public ActionResult Index()
         {
+            if ((Account)Session["account"] != null)
+            { 
+                var account = (Account)Session["account"]; 
+            }
             var list = serNews.GetAll();
             List<eNewspaper> lst = new List<eNewspaper>();
             foreach (var item in list)
             {
-                lst.Add(new eNewspaper() { Active = item.Active, Description = item.Description, Image = item.Image, Journalist = item.Journalist, NewsId = item.NewsId, PublicationDate = (DateTime)item.PublicationDate, Title = item.Title });
+                //lst.Add(new eNewspaper() { Active = item.Active, Description = item.Description, Image = item.Image, Journalist = item.Journalist, NewsId = item.NewsId, PublicationDate = (DateTime)item.PublicationDate, Title = item.Title });
             }
             return View(lst);
         }
