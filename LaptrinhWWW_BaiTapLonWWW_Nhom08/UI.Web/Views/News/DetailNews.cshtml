@@ -1,7 +1,5 @@
 ﻿@model EntityFrameworks.Model.Newspaper
 
-
-
 <div class="about-area">
     <div class="container">
         <div class="row">
@@ -112,5 +110,6 @@
     </div>
 </div>
 
+@{ Html.RenderAction("GetListComment", "News", new { newsid = Model.NewsId }); }
 
 

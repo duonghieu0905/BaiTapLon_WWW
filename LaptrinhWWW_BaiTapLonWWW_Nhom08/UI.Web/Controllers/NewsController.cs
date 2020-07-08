@@ -155,6 +155,18 @@ namespace UI.Web.Controllers
                 return RedirectToAction("UpdateNews");
             } 
         }
+
+        public ActionResult DetailNews(int id = 1)
+        {
+            var news = serNews.GetById(id);
+            if (news != null)
+            {
+                ViewBag.Des = HttpUtility.HtmlDecode(news.Description);
+            }
+            return View(news);
+        }
+
+
         [ChildActionOnly]
         public ActionResult GetListComment(int newsid)
         {
@@ -182,6 +194,8 @@ namespace UI.Web.Controllers
         [HttpPost]
         public ActionResult AddComment(Comment comment/*, HttpPostedFileBase uploadFile*/)
         {
+            if (comment.Description == null && comment.Image == null)
+                return View(comment);
             var fHinh = Request.Files["myFileImage"];
             if (fHinh != null)
             {
@@ -191,24 +205,13 @@ namespace UI.Web.Controllers
             }
             else
                 comment.Image = null;
+            
             comment.Time = DateTime.Now;
             var cmt = _commentService.AddComment(comment);
             if (cmt != null)
-                return RedirectToAction("DetailNews");
-            return View();
-        }
-        public ActionResult DetailNews(int id)
-        {
-            var news = serNews.GetById(id);
-            if (news != null)
-            {
-                ViewBag.Des = HttpUtility.HtmlDecode(news.Description);
-            }
-            return View(news);
+                return View("DetailNews");
+            return View(comment);
         }
 
-
-
-        
     }
 }

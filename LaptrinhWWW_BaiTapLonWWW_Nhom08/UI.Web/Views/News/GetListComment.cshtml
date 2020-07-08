@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<UI.Web.Models.CommentViewModel>
 @using UI.Web.Models
 <head>
-
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="~/emoji-picker/lib/css/emoji.css" rel="stylesheet">*@
     <style>
         #div {
             position: relative;
@@ -33,100 +35,155 @@
             width: 50px;
             height: 50px;
         }
+
+        #binhluan, .btn-success {
+            background: #138496;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 0;
+            margin-bottom: 0;
+            padding: 20px 15px;
+            border-radius: 5px;
+            min-width: 120px;
+            margin: 10px;
+            cursor: pointer;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 1;
+            border: 0;
+            overflow: hidden;
+            margin: 0;
+        }
+
+            #binhluan, .btn-success:hover {
+            }
     </style>
 
 </head>
-
 @{
     CommentViewModel commentView = new CommentViewModel();
 }
-
 @foreach (var item in Model)
 {
-    commentView = item;
-    <div class="container mt-3">
 
+    <div class="container mt-3">
         <div class="input-group mb-3">
-            <div class="input-group-append"
-                 style="width: auto;font-size: 18px; margin-top: 10px;margin-left: 20px;border: 1px solid;border-color: black;">
-                <img id="" style="width: 50px;height: 50px;" src="~/Images/Comments/@item.Image" />
-                <p>@item.AccountName</p>
-                <p>@item.Description</p>
+            <div class="input-group-append" style="width: auto;margin-left: 20px;">
+                <img id="" class="img-circle" src="~/Images/Comments/@item.Image" style="width: auto ;vertical-align: middle;width: 50px;height: 50px; border-radius: 50%; border-color: darkseagreen;" />
+                <div style="margin-top: 10px;float: left;color: #385898;">
+                    <p style="margin-top: 3px;">@item.AccountName</p>
+                </div>
+                <div style=" vertical-align: middle;width: auto; float: left; padding-left:15px;padding-right:15px; margin-top: 10px;margin-left: 20px;border: 1px solid;border-radius: 20px;border-color: #CCD0D5;background-color: #F2F3F5; color:#1E1E1E;">
+                    <p>@item.Description</p>
+                </div>
             </div>
-            <div class="input-group-append" style="border: 1px solid;">
-                <a id="{{ list.0.id }}" class="js-openDiv" href="#">Trả lời</a>
-                <a href="like">Thích</a>
-            </div>
+        </div>
+        <div class="input-group-append" style="clear:both; margin-left: 15%;">
+            <a id="{{ list.0.id }}" class="js-openDiv" href="#">Trả lời</a>
+            <a href="like" style="margin-left: 2%;">Thích</a>
         </div>
     </div>
     foreach (var item2 in item.Comments)
     {
-        <br />
         <div class="container mt-3">
             <div class="input-group mb-3">
-                <div class="input-group-append"
-                     style="width: auto;font-size: 18px; margin-top: 10px;margin-left: 100px;border: 1px solid;border-color: black;">
-                    <img id="" style="width: 50px;height: 50px;" src="~/Images/Comments/@item2.Image" />
-                    <p>@item2.AccountName</p>
-                    <p>@item2.Description</p>
-                    <div class="input-group-append" style="border: 1px solid;">
-                        <a href="like">Thích</a>
+                <div class="input-group-append" style="width: auto;margin-left: 100px;">
+                    <img id="" src="~/Images/Comments/@item2.Image" style="width: 50px;height: 50px;" />
+                    <div style="margin-top: 10px;float: left;color: #385898;">
+                        <p style="margin-top: 3px;">@item2.AccountName</p>
+                    </div>
+                    <div style=" vertical-align: middle;width: auto; float: left; padding-left:15px;padding-right:15px; margin-top: 10px;margin-left: 20px;border: 1px solid;border-radius: 20px;border-color: #CCD0D5;background-color: #F2F3F5; color:#1E1E1E;">
+                        <p>@item2.Description</p>
                     </div>
                 </div>
             </div>
-        </div>
-    }
-
-    <div class="input-group mt-3 col-4 " id="@item.CommentId" style="width: auto; font-size: 18px; margin-top: 10px; margin-left:150px; border: 1px solid rosybrown; border-radius: 13px; display: none;">
-        <img class="review" />
-        <input type="text" class="form-control" placeholder="Nhập bình luận..." style="word-wrap: break-word;">
-        <div class="input-group-append" style="margin-right:5px; margin-top: 5px;font-size: 25px;">
-            <div id="div" class="far fa-comments">
-                <input id="input" type="submit" name="file" />
+            <div class="input-group-append" style="clear:both; margin-left: 17%;">
+                <a href="like" style="margin-left: 2%;">Thích</a>
             </div>
+        </div>
+
+    }
+    commentView = item;
+    <div class="container mt-3" id="@item.CommentId" style=" display: none;">
+        <div class="input-group mt-3 " style="width: auto;margin-top: 10px; margin-left:150px; border: 1px solid rosybrown; border-radius: 13px;">
+            <div class="input-group-append">
+                <img class="review" />
+            </div>
+            <input type="text" class="form-control" placeholder="Nhập bình luận..." style="word-wrap: break-word;">
+            <div class="input-group-append" style="margin-right:5px; margin-top: 5px;font-size: 25px;">
+                <div id="div" class="far fa-comments">
+                    <input id="input" type="submit" name="file" />
+                </div>
+                <div id="div" class="fa fa-camera">
+                    <input class="upload" type="file" name="file" />
+                </div>
+                <div id="div" class="far fa-smile">
+                    <input id="input" type="submit" name="file" />
+                </div>
+            </div>
+        </div>
+        <div class="input-group mt-3 col-6" style="width: auto; margin-top: 10px; margin-left:150px;">
+            <div id="div" class="col-md-offset-2 col-md-4">
+                <input type="submit" id="@item.CommentId" value="Bình luận" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.js-openDiv').click(function () {
+        var this_id = $(this).attr('id');
+        $('#@item.CommentId').show();
+        });
+        $("@item.CommentId").click(function () {
+        var des = $('#description').val();
+        $.ajax({
+        url: "@Url.Action("AddComment")",
+            method: "post",
+            data: {
+            CommentId: 1,
+            Time: null,
+            Description: des,
+            Image: null,
+            Role: @commentView.CommentId,
+            NewsId: @ViewBag.NewID,
+            AccountName: "huunguyen",
+            Active: 1,
+            Account: null,
+            Newspaper: null
+            },
+            success: function (data) {
+            alert("Sub Comment");
+        }
+    });
+});
+    </script>
+}
+
+<div class="container">
+    <div class="input-group mt-3 col-6" style="border:1px solid rosybrown; border-radius: 13px;margin-left:30px;">
+        <img id="reviewPar" />
+        <input type="text" id="description" class="form-control" placeholder="Nhập bình luận..." style="word-wrap: break-word; ">
+        <div class="input-group-append" style="margin-right:5px; margin-top: 5px;font-size: 25px;">
+
             <div id="div" class="fa fa-camera">
-                <input class="upload" type="file" name="file" />
+                <input id="uploadPar" type="file" name="myFileImage" />
             </div>
             <div id="div" class="far fa-smile">
                 <input id="input" type="submit" name="file" />
             </div>
         </div>
+
     </div>
-    <script>
-         $('.js-openDiv').click(function () {
-        var this_id = $(this).attr('id');
-        $('#@item.CommentId').show();
-         });
-
-    </script>
-}
-@*<form method="post" name="f1" action="/News/AddComment" enctype="multipart/form-data">*@
-
-<div class="input-group mt-3 col-6" style="border:1px solid rosybrown; border-radius: 13px;margin-left:30px;">
-    <img id="reviewPar" />
-    <input type="text" id="description" class="form-control" placeholder="Nhập bình luận..." style="word-wrap: break-word; ">
-    <div class="input-group-append" style="margin-right:5px; margin-top: 5px;font-size: 25px;">
-        <div id="div" class="far fa-comments">
-            <input id="input" type="submit" name="file" />
-        </div>
-        <div id="div" class="fa fa-camera">
-            <input id="uploadPar" type="file" name="myFileImage" />
-        </div>
-        <div id="div" class="far fa-smile">
-            <input id="input" type="submit" name="file" />
+    <div class="input-group mt-3 col-6">
+        <div id="div" class="col-md-offset-2 col-md-4">
+            <input type="submit" id="binhluan" value="Bình luận" class="btn btn-success" style="background-size:auto;" />
         </div>
     </div>
 </div>
-
-<div>
-    <button id="xem">xem</button>
-    <input id="view" type="text" />
-</div>
-
-@*</form>*@
 <script>
-
-
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -160,20 +217,10 @@
     });
 </script>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <script type="text/javascript">
 
-    $("#xem").click(function () {
+    $("#binhluan").click(function () {
         var des = $('#description').val();
-        var newid;
-        if (@Model.Count() == 0) {
-            newid = @ViewBag.NewID;
-        }
-        else {
-            newid = @commentView.NewsId;
-        }
         $.ajax({
             url: "@Url.Action("AddComment")",
             method: "post",
@@ -183,16 +230,80 @@
                 Description: des,
                 Image: null,
                 Role: 0,
-                NewsId: newid,
-                    AccountName: "huunguyen",
-                    Active: 1,
-                    Account: null,
-                    Newspaper: null
+                NewsId: @ViewBag.NewID,
+                AccountName: "huunguyen",
+                Active: 1,
+                Account: null,
+                Newspaper: null
             },
             success: function (data) {
-                alert("qwe");
+                alert("Comment");
             }
         });
     });
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<body class="text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="text-left">
+                        <p class="lead emoji-picker-container">
+                            <input type="email" class="form-control" placeholder="Input field" data-emojiable="true">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <script src="~/emoji-picker/lib/js/config.js"></script>
+        <script src="~/emoji-picker/lib/js/util.js"></script>
+        <script src="~/emoji-picker/js/jquery.emojiarea.js"></script>
+        <script src="~/emoji-picker/lib/js/emoji-picker.js"></script>
+
+        <script>
+            $(function () {
+                window.emojiPicker = new EmojiPicker({
+                    emojiable_selector: '[data-emojiable=true]',
+                    assetsPath: 'D:\study\HK6\WWW\btl\www_ver6\BaiTapLon_WWW\LaptrinhWWW_BaiTapLonWWW_Nhom08\UI.Web\emoji-picker\lib\img',
+                    popupButtonClasses: 'fa fa-smile-o'
+                });
+                window.emojiPicker.discover();
+            });
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-49610253-3', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>*@

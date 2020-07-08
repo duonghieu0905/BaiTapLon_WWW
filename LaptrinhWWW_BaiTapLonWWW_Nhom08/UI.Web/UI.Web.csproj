@@ -80,6 +80,12 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
     </Reference>
@@ -89,9 +95,13 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -1254,6 +1264,23 @@
     <Content Include="DataCK\ckfinder\skins\v1\skin.js" />
     <Content Include="DataCK\ckfinder\skins\v1\uipanel.css" />
     <Content Include="DataCK\ckfinder\translations.txt" />
+    <Content Include="emoji-picker\demo\favicon.png" />
+    <Content Include="emoji-picker\demo\index.html" />
+    <Content Include="emoji-picker\lib\css\emoji.css" />
+    <Content Include="emoji-picker\lib\img\blank.gif" />
+    <Content Include="emoji-picker\lib\img\emoji_spritesheet_0.png" />
+    <Content Include="emoji-picker\lib\img\emoji_spritesheet_1.png" />
+    <Content Include="emoji-picker\lib\img\emoji_spritesheet_2.png" />
+    <Content Include="emoji-picker\lib\img\emoji_spritesheet_3.png" />
+    <Content Include="emoji-picker\lib\img\emoji_spritesheet_4.png" />
+    <Content Include="emoji-picker\lib\img\IconsetSmiles.png" />
+    <Content Include="emoji-picker\lib\img\IconsetSmiles_1x.png" />
+    <Content Include="emoji-picker\lib\img\IconsetW.png" />
+    <Content Include="emoji-picker\lib\img\IconsetW_1x.png" />
+    <Content Include="emoji-picker\lib\js\config.js" />
+    <Content Include="emoji-picker\lib\js\emoji-picker.js" />
+    <Content Include="emoji-picker\lib\js\jquery.emojiarea.js" />
+    <Content Include="emoji-picker\lib\js\util.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1330,6 +1357,9 @@
     <Content Include="DataCK\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="DataCK\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="DataCK\ckfinder\userfiles\.htaccess" />
+    <Content Include="emoji-picker\lib\css\emoji.css.map" />
+    <Content Include="emoji-picker\lib\js\emoji-picker.coffee" />
+    <Content Include="emoji-picker\lib\js\emoji-picker.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
