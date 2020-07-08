@@ -11,9 +11,19 @@ namespace UI.Web.Controllers
 {
     public class HomeController : Controller
     {
+
+        MappingService sermap = new MappingService();
         NewspaperService serNews = new NewspaperService();
+        TopicService sertop = new TopicService();
+
         public ActionResult Index()
         {
+
+            ViewBag.Right = serNews.GetAll().Take(4);
+            ViewBag.Top = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(1);
+            ViewBag.Bot = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(3);
+            ViewBag.Topic = sertop.GetAll();
+            ViewBag.GetAllBao = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(4);
             if ((Account)Session["account"] != null)
             { 
                 var account = (Account)Session["account"]; 
@@ -27,18 +37,26 @@ namespace UI.Web.Controllers
             return View(lst);
         }
 
-        public ActionResult About()
+        public JsonResult getNew(int id)
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+            var query = (from tp in sertop.GetAll()
+                         join
+map in sermap.GetAll() on tp.TopicId equals map.TopicId
+                         join
+news in serNews.GetAll() on map.NewsId equals news.NewsId
+                         where tp.TopicId == id
+                         select new
+                         {
+                             news.Image,
+                             news.Title,
+                             tp.TopicName,
+                             news.NewsId
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+                         }).ToList();
+            ViewBag.getbaotheoIDTopic = query;
 
-            return View();
+            return Json(query, JsonRequestBehavior.AllowGet);
         }
 
     }
