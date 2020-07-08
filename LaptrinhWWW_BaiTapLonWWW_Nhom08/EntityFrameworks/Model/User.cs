@@ -7,10 +7,9 @@ namespace EntityFrameworks.Model
     {
         [Key]
         public int UserId { get; set; }
-        [Required(ErrorMessage ="khong duoc bo trong")]
-        [RegularExpression(@"^([A-Z][a-z]{1,7})(\s([A-Z][a-z]{1,7}){1,7})+$", ErrorMessage = "Vui lòng không để trống tên thành viên")]
+        [Required, RegularExpression(@"^([A-Z][a-z]{1,7})(\s([A-Z][a-z]{1,7}){1,7})+$", ErrorMessage = "Vui lòng không để trống tên thành viên")]
         public string UserName { get; set; }
-        [DataType(DataType.EmailAddress, ErrorMessage = "Vui lòng nhập đúng định dạng email")]
+        [Required,DataType(DataType.EmailAddress, ErrorMessage = "Vui lòng nhập đúng định dạng email")]
         public string Email { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime DateOfBirth { get; set; }

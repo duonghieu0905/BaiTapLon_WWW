@@ -37,11 +37,13 @@
 
 </head>
 
-
+@{
+    CommentViewModel commentView = new CommentViewModel();
+}
 
 @foreach (var item in Model)
 {
-
+    commentView = item;
     <div class="container mt-3">
 
         <div class="input-group mb-3">
@@ -164,12 +166,14 @@
 <script type="text/javascript">
 
     $("#xem").click(function () {
-        //var data = new FormData();
-        //var files = $("#uploadPar").get(0).files;
-        //if (files.length > 0) {
-        //    data.append("uploadPar", files[0]);
-        //}
         var des = $('#description').val();
+        var newid;
+        if (@Model.Count() == 0) {
+            newid = @ViewBag.NewID;
+        }
+        else {
+            newid = @commentView.NewsId;
+        }
         $.ajax({
             url: "@Url.Action("AddComment")",
             method: "post",
@@ -178,8 +182,8 @@
                 Time: null,
                 Description: des,
                 Image: null,
-                    Role: 0,
-                    NewsId: 1,
+                Role: 0,
+                NewsId: newid,
                     AccountName: "huunguyen",
                     Active: 1,
                     Account: null,

@@ -45,15 +45,20 @@ namespace UI.Web.Controllers
             account.Password = journalist.Password;
             account.UserId = user.UserId;
             account.Active = 1;
-
-            var temp = _userService.AddUser(user);
-            if (temp != null)
+            try
             {
-                var acc = _accountService.AddAccount(account);
-                if (acc != null)
-                    return View("Index");
+                var temp = _userService.AddUser(user);
+                if (temp != null)
+                {
+                    var acc = _accountService.AddAccount(account);
+                    if (acc != null)
+                        return View("Index");
+                }
+            }catch(Exception)
+            {
+                return View("AddJournalist");
             }
-            return View(journalist);
+            return View("AddJournalist");
         }
 
         public ActionResult Edit(int id)

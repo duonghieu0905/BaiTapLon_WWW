@@ -239,8 +239,11 @@ a {
     }
 
 a, button {
-    color: #fff;
+    color: blue;
     outline: medium none;
+}
+a:hover{
+    color:black;
 }
 
     button:focus, input:focus, input:focus, textarea, textarea:focus {

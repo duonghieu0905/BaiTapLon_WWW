@@ -153,6 +153,7 @@ namespace UI.Web.Controllers
             List<CommentViewModel> lst = new List<CommentViewModel>();
             CommentService sv = new CommentService();
             var result = sv.GetAll().Where(x => x.NewsId == newsid && x.Role == 0);
+            ViewBag.NewID = newsid;
             foreach (var item in result)
             {
                 lst.Add(new CommentViewModel { CommentId = item.CommentId, Description = item.Description, Image = item.Image, AccountName = item.AccountName });
