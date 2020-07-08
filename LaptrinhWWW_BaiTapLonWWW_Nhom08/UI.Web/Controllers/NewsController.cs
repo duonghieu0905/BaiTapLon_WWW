@@ -7,6 +7,7 @@ using Entities;
 using Services;
 using EntityFrameworks.Model;
 using UI.Web.Models;
+using EntityFrameworks.AccessModel;
 
 namespace UI.Web.Controllers
 {
@@ -19,10 +20,17 @@ namespace UI.Web.Controllers
             _commentService = new CommentService();
         }
         // GET: News
-        public ActionResult Index()
+        NewsDBContext dt = new NewsDBContext();
+        MappingService sermap = new MappingService();
+        NewspaperService serNews = new NewspaperService();
+        TopicService sertop = new TopicService();
+        public ActionResult Index(int id)
         {
-           
-            return View();
+
+            List<Newspaper> ds = (from n in dt.Mappings
+                                  where n.TopicId == id
+                                  select n.Newspaper).ToList();
+            return View(ds);
         }
         public ActionResult GetView()
         {
@@ -189,8 +197,18 @@ namespace UI.Web.Controllers
                 return RedirectToAction("DetailNews");
             return View();
         }
+        public ActionResult DetailNews(int id)
+        {
+            var news = serNews.GetById(id);
+            if (news != null)
+            {
+                ViewBag.Des = HttpUtility.HtmlDecode(news.Description);
+            }
+            return View(news);
+        }
 
 
 
+        
     }
 }

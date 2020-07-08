@@ -378,44 +378,6 @@
     <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
     <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="assets\js\wow.min.js" />
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\Entities.dll" />
-    <Content Include="bin\Entities.pdb" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
-    <Content Include="bin\EntityFrameworks.dll" />
-    <Content Include="bin\EntityFrameworks.pdb" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\Repository.dll" />
-    <Content Include="bin\Repository.pdb" />
-    <Content Include="bin\Service.Interfaces.dll" />
-    <Content Include="bin\Service.Interfaces.pdb" />
-    <Content Include="bin\Services.dll" />
-    <Content Include="bin\Services.pdb" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\UI.Web.dll" />
-    <Content Include="bin\UI.Web.pdb" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1368,12 +1330,6 @@
     <Content Include="DataCK\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="DataCK\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="DataCK\ckfinder\userfiles\.htaccess" />
-    <Content Include="bin\Entities.dll.config" />
-    <Content Include="bin\EntityFrameworks.dll.config" />
-    <Content Include="bin\Repository.dll.config" />
-    <Content Include="bin\Service.Interfaces.dll.config" />
-    <Content Include="bin\Services.dll.config" />
-    <None Include="bin\UI.Web.dll.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1396,6 +1352,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Approval\Index.cshtml" />
     <Content Include="Views\Approval\ReviewNews.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
     <None Include="Views\CacTrang\about.cshtml" />
     <None Include="Views\CacTrang\blog.cshtml" />
     <None Include="Views\CacTrang\categori.cshtml" />
@@ -1430,10 +1387,10 @@
     <Content Include="Views\Journalist\Edit.cshtml" />
     <Content Include="Views\Journalist\DeleteJournalist.cshtml" />
     <Content Include="Views\Journalist\JournalistDetails.cshtml" />
+    <Content Include="Views\News\DetailNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\About\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
