@@ -43,6 +43,7 @@ namespace Services
                 exits.Description = newspaper.Description;
                 exits.Active = newspaper.Active;
                 exits.Title = newspaper.Title;
+                exits.Image = newspaper.Image;
                 repository.Update(exits);
             }
             return exits;
