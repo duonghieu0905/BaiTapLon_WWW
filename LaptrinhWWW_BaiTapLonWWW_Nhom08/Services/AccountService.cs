@@ -33,7 +33,10 @@ namespace Services
         {
             return repository.GetById(id);
         }
-
+        public Account GetAccountByJournalist(int user)
+        {
+            return repository.GetByCondition(x => x.UserId == user);
+        }
         public Account UpdateAccount(Account account)
         {
         

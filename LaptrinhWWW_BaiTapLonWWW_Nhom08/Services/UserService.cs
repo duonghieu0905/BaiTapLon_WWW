@@ -3,6 +3,7 @@ using Repository;
 using Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Services
 {
@@ -48,6 +49,20 @@ namespace Services
                 repository.Update(exits);
             }
             return null;
+        }
+        public IEnumerable<User> ListJournalist(int role)
+        {
+            return repository.GetByWhere(x => x.Role == role).ToList();
+        }
+        public User GetJournalist(int id)
+        {
+            return repository.GetByCondition(x => x.UserId == id);
+        }
+
+        public bool DeleteJournalist(int id)
+        {
+            repository.Delete(id);
+            return true;
         }
     }
 }

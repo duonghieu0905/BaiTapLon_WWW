@@ -13,9 +13,13 @@ namespace UI.Web.Controllers
    
     public class NewsController : Controller
     {
-        
+        private CommentService _commentService;
+        public NewsController()
+        {
+            _commentService = new CommentService();
+        }
         // GET: News
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
            
             return View();
@@ -28,7 +32,7 @@ namespace UI.Web.Controllers
         //Get
         
         [HttpPost]
-        public ActionResult GetNewsByTitle(int id)
+        public ActionResult GetNewsByTitle()
         {
             return View();
         }
@@ -141,12 +145,51 @@ namespace UI.Web.Controllers
                     svm.AddMapping(new Mapping { NewsId = info.NewsId, TopicId = Int32.Parse(item) });
                 }
                 return RedirectToAction("UpdateNews");
+            } 
+        }
+        [ChildActionOnly]
+        public ActionResult GetListComment(int newsid)
+        {
+            List<CommentViewModel> lst = new List<CommentViewModel>();
+            CommentService sv = new CommentService();
+            var result = sv.GetAll().Where(x => x.NewsId == newsid && x.Role == 0);
+            foreach (var item in result)
+            {
+                lst.Add(new CommentViewModel { CommentId = item.CommentId, Description = item.Description, Image = item.Image, AccountName = item.AccountName });
             }
-            
+            foreach (var item in lst)
+            {
+                var resultsub = sv.GetAll().Where(x => x.NewsId == newsid && x.Role == item.CommentId).ToList();
+                item.Comments = resultsub;
+            }
+            return PartialView(lst);
+        }
+        public ActionResult getComment(int id = 1)
+        {
+            var s = Json(_commentService.GetById(id), JsonRequestBehavior.AllowGet);
+            return s;
+
+        }
+        [HttpPost]
+        public ActionResult AddComment(Comment comment/*, HttpPostedFileBase uploadFile*/)
+        {
+            var fHinh = Request.Files["myFileImage"];
+            if (fHinh != null)
+            {
+                var pathHinh = Server.MapPath("~/Images/Comments/" + fHinh.FileName);
+                fHinh.SaveAs(pathHinh);
+                comment.Image = fHinh.FileName;
+            }
+            else
+                comment.Image = null;
+            comment.Time = DateTime.Now;
+            var cmt = _commentService.AddComment(comment);
+            if (cmt != null)
+                return RedirectToAction("DetailNews");
+            return View();
         }
 
 
 
-        
     }
 }

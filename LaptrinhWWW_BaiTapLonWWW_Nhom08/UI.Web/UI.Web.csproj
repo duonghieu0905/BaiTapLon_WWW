@@ -178,11 +178,14 @@
     <Compile Include="Controllers\ApprovalController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JournalistController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommentViewModel.cs" />
+    <Compile Include="Models\JournalistViewmodel.cs" />
     <Compile Include="Models\NewInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1293,6 +1296,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Comments\20191226_113457.jpg" />
+    <Content Include="Images\Comments\FB_IMG_1480512660141.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\css\main.map" />
@@ -1419,10 +1424,12 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\ChangePass.cshtml" />
     <Content Include="Views\News\UpdateNews.cshtml" />
+    <Content Include="Views\News\GetListComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\About\" />
+    <Folder Include="Views\Journalist\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

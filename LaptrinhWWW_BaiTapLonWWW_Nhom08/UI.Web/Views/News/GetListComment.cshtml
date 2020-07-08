@@ -1,0 +1,194 @@
+﻿@model IEnumerable<UI.Web.Models.CommentViewModel>
+@using UI.Web.Models
+<head>
+
+    <style>
+        #div {
+            position: relative;
+            overflow: hidden;
+            margin-right: 4px;
+        }
+
+        #input,
+        #uploadPar, .upload {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .form-control:focus {
+            border-color: white;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .form-control {
+            border: 0;
+            margin-left: 10px;
+        }
+
+        .review, #reviewPar {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="container mt-3">
+
+        <div class="input-group mb-3">
+            <div class="input-group-append"
+                 style="width: auto;font-size: 18px; margin-top: 10px;margin-left: 20px;border: 1px solid;border-color: black;">
+                <img id="" style="width: 50px;height: 50px;" src="~/Images/Comments/@item.Image" />
+                <p>@item.AccountName</p>
+                <p>@item.Description</p>
+            </div>
+            <div class="input-group-append" style="border: 1px solid;">
+                <a id="{{ list.0.id }}" class="js-openDiv" href="#">Trả lời</a>
+                <a href="like">Thích</a>
+            </div>
+        </div>
+    </div>
+    foreach (var item2 in item.Comments)
+    {
+        <br />
+        <div class="container mt-3">
+            <div class="input-group mb-3">
+                <div class="input-group-append"
+                     style="width: auto;font-size: 18px; margin-top: 10px;margin-left: 100px;border: 1px solid;border-color: black;">
+                    <img id="" style="width: 50px;height: 50px;" src="~/Images/Comments/@item2.Image" />
+                    <p>@item2.AccountName</p>
+                    <p>@item2.Description</p>
+                    <div class="input-group-append" style="border: 1px solid;">
+                        <a href="like">Thích</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="input-group mt-3 col-4 " id="@item.CommentId" style="width: auto; font-size: 18px; margin-top: 10px; margin-left:150px; border: 1px solid rosybrown; border-radius: 13px; display: none;">
+        <img class="review" />
+        <input type="text" class="form-control" placeholder="Nhập bình luận..." style="word-wrap: break-word;">
+        <div class="input-group-append" style="margin-right:5px; margin-top: 5px;font-size: 25px;">
+            <div id="div" class="far fa-comments">
+                <input id="input" type="submit" name="file" />
+            </div>
+            <div id="div" class="fa fa-camera">
+                <input class="upload" type="file" name="file" />
+            </div>
+            <div id="div" class="far fa-smile">
+                <input id="input" type="submit" name="file" />
+            </div>
+        </div>
+    </div>
+    <script>
+         $('.js-openDiv').click(function () {
+        var this_id = $(this).attr('id');
+        $('#@item.CommentId').show();
+         });
+
+    </script>
+}
+@*<form method="post" name="f1" action="/News/AddComment" enctype="multipart/form-data">*@
+
+<div class="input-group mt-3 col-6" style="border:1px solid rosybrown; border-radius: 13px;margin-left:30px;">
+    <img id="reviewPar" />
+    <input type="text" id="description" class="form-control" placeholder="Nhập bình luận..." style="word-wrap: break-word; ">
+    <div class="input-group-append" style="margin-right:5px; margin-top: 5px;font-size: 25px;">
+        <div id="div" class="far fa-comments">
+            <input id="input" type="submit" name="file" />
+        </div>
+        <div id="div" class="fa fa-camera">
+            <input id="uploadPar" type="file" name="myFileImage" />
+        </div>
+        <div id="div" class="far fa-smile">
+            <input id="input" type="submit" name="file" />
+        </div>
+    </div>
+</div>
+
+<div>
+    <button id="xem">xem</button>
+    <input id="view" type="text" />
+</div>
+
+@*</form>*@
+<script>
+
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.review').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(".upload").change(function () {
+        readURL(this);
+    });
+
+    function readURLPar(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#reviewPar').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#uploadPar").change(function () {
+        readURLPar(this);
+    });
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $("#xem").click(function () {
+        //var data = new FormData();
+        //var files = $("#uploadPar").get(0).files;
+        //if (files.length > 0) {
+        //    data.append("uploadPar", files[0]);
+        //}
+        var des = $('#description').val();
+        $.ajax({
+            url: "@Url.Action("AddComment")",
+            method: "post",
+            data: {
+                CommentId: 1,
+                Time: null,
+                Description: des,
+                Image: null,
+                    Role: 0,
+                    NewsId: 1,
+                    AccountName: "huunguyen",
+                    Active: 1,
+                    Account: null,
+                    Newspaper: null
+            },
+            success: function (data) {
+                alert("qwe");
+            }
+        });
+    });
+</script>
+
