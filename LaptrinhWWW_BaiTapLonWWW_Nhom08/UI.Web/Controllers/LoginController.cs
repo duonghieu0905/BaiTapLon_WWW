@@ -58,32 +58,41 @@ namespace UI.Web.Controllers
             Session["account"] = null;
             return RedirectToAction("Index", "Home");
         }
-        public ActionResult ChangePass(string passold,string passnew)
+        public ActionResult ChangePass(string passold,string passnew, string passConfirm)
         {
             if (passold != null && passnew != null)
             {
                 if ((Account)Session["account"] != null)
                 {
-                    var account = (Account)Session["account"];
-                    var accountchange = _acccountService.GetAll().FirstOrDefault(x => x.AccountName == account.AccountName);
-                    if (accountchange.Password == passold)
+                    if (string.Compare(passnew,passConfirm)==0)
                     {
-                        accountchange.Password = passnew;
-                        var model = _acccountService.UpdateAccount(accountchange);
-                        if (model.Password != passold)
+
+                        var account = (Account)Session["account"];
+                        var accountchange = _acccountService.GetAll().FirstOrDefault(x => x.AccountName == account.AccountName);
+                        if (accountchange.Password == passold)
                         {
-                            Session["account"] = null;
-                            return RedirectToAction("Index", "Home");
+                            accountchange.Password = passnew;
+                            var model = _acccountService.UpdateAccount(accountchange);
+                            if (model.Password != passold)
+                            {
+                                Session["account"] = null;
+                                return RedirectToAction("Index", "Home");
+                            }
+                            else
+                            {
+                                Response.Write("<script>alert('Thay đổi password lỗi!');</script>"); //works great
+                                return View();
+                            }
                         }
                         else
                         {
-                            Response.Write("<script>alert('Thay đổi password lỗi!');</script>"); //works great
+                            Response.Write("<script>alert('Sai mật khẩu!');</script>"); //works great
                             return View();
                         }
                     }
                     else
                     {
-                        Response.Write("<script>alert('Sai mật khẩu!');</script>"); //works great
+                        Response.Write("<script>alert('PassConfirm Sai!');</script>"); //works great
                         return View();
                     }
                 }
