@@ -41,15 +41,16 @@ namespace UI.Web.Controllers
             user.Role = 2;
             user.Phone = journalist.Phone;
 
-            account.AccountName = journalist.AccountName;
-            account.Password = journalist.Password;
-            account.UserId = user.UserId;
-            account.Active = 1;
+            
             try
             {
                 var temp = _userService.AddUser(user);
                 if (temp != null)
                 {
+                    account.AccountName = journalist.AccountName;
+                    account.Password = journalist.Password;
+                    account.UserId = temp.UserId;
+                    account.Active = 1;
                     var acc = _accountService.AddAccount(account);
                     if (acc != null)
                         return View("Index");
