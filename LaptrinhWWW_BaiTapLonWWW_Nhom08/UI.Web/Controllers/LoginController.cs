@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using UI.Web.Models;
 
 namespace UI.Web.Controllers
 {
     public class LoginController : Controller
     {
+        private UserService _userService;
         private AccountService _acccountService;
         public LoginController()
         {
+            _userService = new UserService();
             _acccountService = new AccountService();
         }
         // GET: Login
@@ -33,10 +36,26 @@ namespace UI.Web.Controllers
                 {
                     if (account.Password == password)
                     {
-                        //success
-                        Session["account"] = account;
-                        Response.Write("<script>alert('Login Success!');</script>"); //works great
-                        return RedirectToAction("Index", "Home");
+                        var user = _userService.GetById(account.UserId);
+                        if (user != null)
+                        {
+                            var accountLogin = new AccountLogin()
+                            {
+                                AccountName = account.AccountName,
+                                Active = account.Active,
+                                UserId = account.UserId,
+                                Role = user.Role
+                            };
+                            SharedController.Role = user.Role;
+                            //success
+                            Session["account"] = accountLogin;
+                            Response.Write("<script>alert('Login Success!');</script>"); //works great
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+
+                        }
                     }
                     else
                     {
@@ -62,9 +81,9 @@ namespace UI.Web.Controllers
         {
             if (passold != null && passnew != null)
             {
-                if ((Account)Session["account"] != null)
+                if ((AccountLogin)Session["account"] != null)
                 {
-                    var account = (Account)Session["account"];
+                    var account = (AccountLogin)Session["account"];
                     var accountchange = _acccountService.GetAll().FirstOrDefault(x => x.AccountName == account.AccountName);
                     if (accountchange.Password == passold)
                     {

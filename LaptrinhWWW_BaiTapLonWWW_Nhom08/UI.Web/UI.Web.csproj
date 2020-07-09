@@ -191,9 +191,11 @@
     <Compile Include="Controllers\JournalistController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountLogin.cs" />
     <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\JournalistViewmodel.cs" />
     <Compile Include="Models\NewInfo.cs" />

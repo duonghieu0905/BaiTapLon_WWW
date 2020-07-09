@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Entities;
 using EntityFrameworks.Model;
 using Services;
+using UI.Web.Models;
 
 namespace UI.Web.Controllers
 {
@@ -24,9 +25,9 @@ namespace UI.Web.Controllers
             ViewBag.Bot = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(3);
             ViewBag.Topic = sertop.GetAll();
             ViewBag.GetAllBao = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(4);
-            if ((Account)Session["account"] != null)
+            if ((AccountLogin)Session["account"] != null)
             { 
-                var account = (Account)Session["account"]; 
+                var account = (AccountLogin)Session["account"]; 
             }
             var list = serNews.GetAll();
             List<eNewspaper> lst = new List<eNewspaper>();

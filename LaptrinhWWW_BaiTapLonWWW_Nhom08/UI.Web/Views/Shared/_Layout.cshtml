@@ -135,27 +135,33 @@
                                     <a href="index.html"><img src="~/assets/img/logo/logo.png" alt=""></a>
                                 </div>
                                 <!-- Main-menu -->
-                                <div class="main-menu d-none d-md-block">
-                                    <nav>
+                                <form action="/Shared/_Layout" method="post">
+                                    <div class="main-menu d-none d-md-block">
+                                        <nav>
 
-                                        <ul id="navigation">
+                                            <ul id="navigation">
 
-                                            <li><a href="https://localhost:44311/home">Trang Chủ</a></li>
-                                            <li><a href="https://localhost:44311/Category/Index">Danh Mục</a></li>
-                                            <li><a href="https://localhost:44311/About/Index">About</a></li>
-                                            @*<li>
-                                                    <a href="#">Trang</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="elements.html">Element</a></li>
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="single-blog.html">Blog Chi Tiết</a></li>
-                                                        <li><a href="details.html">Danh Mục Chi tiết</a></li>
-                                                    </ul>
-                                                </li>*@
+                                                <li><a href="https://localhost:44311/home">Trang Chủ</a></li>
+                                                <li><a href="https://localhost:44311/Category/Index">Danh Mục</a></li>
 
-                                        </ul>
-                                    </nav>
-                                </div>
+                                                @if (UI.Web.Controllers.SharedController.Role == 1)
+                                                {
+                                                    <li><a href="https://localhost:44311/About/Index">About</a></li>
+                                                }
+                                                @*<li>
+            <a href="#">Trang</a>
+            <ul class="submenu">
+                <li><a href="elements.html">Element</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="single-blog.html">Blog Chi Tiết</a></li>
+                <li><a href="details.html">Danh Mục Chi tiết</a></li>
+            </ul>
+        </li>*@
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </form>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-4">
                                 <div class="header-right-btn f-right d-none d-lg-block">
