@@ -194,23 +194,30 @@ namespace UI.Web.Controllers
         [HttpPost]
         public ActionResult AddComment(Comment comment/*, HttpPostedFileBase uploadFile*/)
         {
-            if (comment.Description == null && comment.Image == null)
-                return View(comment);
-            var fHinh = Request.Files["myFileImage"];
-            if (fHinh != null)
+            if ((AccountLogin)Session["account"] != null)
             {
-                var pathHinh = Server.MapPath("~/Images/Comments/" + fHinh.FileName);
-                fHinh.SaveAs(pathHinh);
-                comment.Image = fHinh.FileName;
+                var account = (AccountLogin)Session["account"];
+                if (comment.Description == null && comment.Image == null)
+                    return View(comment);
+                var fHinh = Request.Files["myFileImage"];
+                if (fHinh != null)
+                {
+                    var pathHinh = Server.MapPath("~/Images/Comments/" + fHinh.FileName);
+                    fHinh.SaveAs(pathHinh);
+                    comment.Image = fHinh.FileName;
+                }
+                else
+                    comment.Image = null;
+
+                comment.Time = DateTime.Now;
+                comment.AccountName = account.AccountName;
+                var cmt = _commentService.AddComment(comment);
+                if (cmt != null)
+                    return View("DetailNews");
+                return View(comment);
             }
-            else
-                comment.Image = null;
-            
-            comment.Time = DateTime.Now;
-            var cmt = _commentService.AddComment(comment);
-            if (cmt != null)
-                return View("DetailNews");
             return View(comment);
+
         }
 
     }
