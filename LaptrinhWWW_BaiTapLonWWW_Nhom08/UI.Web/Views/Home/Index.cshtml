@@ -2,6 +2,13 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 <body>
+    @using (Html.BeginForm())
+    {
+        <p style="float:right">
+            Nhập bài báo cần tìm: @Html.TextBox("SearchString")
+            <input type="submit" value="Tìm kiếm" />
+        </p>
+    }
     <main>
         <!-- Trending Area Start -->
         <div class="trending-area fix">
@@ -28,7 +35,7 @@
                         <div class="col-lg-8">
                             <!-- Trending Top -->
                             @foreach (var item in ViewBag.Top)
-                            {
+            {
                                 <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
                                     <div class="trending-top mb-30">
                                         <div class="trend-top-img">

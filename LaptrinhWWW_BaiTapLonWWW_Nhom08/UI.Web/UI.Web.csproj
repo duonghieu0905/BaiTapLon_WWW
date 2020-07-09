@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ApprovalController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalistController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -1378,7 +1379,8 @@
     <Content Include="Views\Login\ChangePass.cshtml" />
     <Content Include="Views\News\UpdateNews.cshtml" />
     <Content Include="Views\News\DetailNews.cshtml" />
-    <Content Include="Views\Journalist\Index.cshtml" />
+    <Content Include="Views\FeedBack\Index.cshtml" />
+    <Content Include="Views\FeedBack\CreateFeedBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

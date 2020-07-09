@@ -16,7 +16,7 @@ namespace UI.Web.Controllers
         NewspaperService serNews = new NewspaperService();
         TopicService sertop = new TopicService();
 
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
 
             ViewBag.Right = serNews.GetAll().Take(4);
@@ -27,6 +27,14 @@ namespace UI.Web.Controllers
             if ((Account)Session["account"] != null)
             { 
                 var account = (Account)Session["account"]; 
+            }
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                ViewBag.Right = serNews.GetAll().Take(4).Where(x => x.Title.ToLower().Contains(SearchString.ToLower())).ToList();
+                ViewBag.Top = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(1).Where(x => x.Title.ToLower().Contains(SearchString.ToLower())).ToList();
+                ViewBag.Bot = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(3).Where(x => x.Title.ToLower().Contains(SearchString.ToLower())).ToList();
+                ViewBag.Topic = sertop.GetAll();
+                ViewBag.GetAllBao = serNews.GetAll().OrderByDescending(x => x.NewsId).Take(4).Where(x => x.Title.ToLower().Contains(SearchString.ToLower())).ToList();
             }
             var list = serNews.GetAll();
             List<eNewspaper> lst = new List<eNewspaper>();
