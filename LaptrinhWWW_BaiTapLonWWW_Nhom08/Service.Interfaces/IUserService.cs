@@ -7,5 +7,6 @@ namespace Service.Interfaces
         User AddUser(User user);
         User UpdateUser(User user);
         bool DeleteUser(object id);
+ 
     }
 }

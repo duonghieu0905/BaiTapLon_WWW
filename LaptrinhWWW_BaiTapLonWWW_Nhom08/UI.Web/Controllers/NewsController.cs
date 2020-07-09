@@ -81,7 +81,7 @@ namespace UI.Web.Controllers
             }
             
         }
-        public ActionResult UpdateNews(int newsid=11)
+        public ActionResult UpdateNews(int newsid=2)
         {
             if (Session["account"] is null)
                 return RedirectToAction("Login", "Login");
