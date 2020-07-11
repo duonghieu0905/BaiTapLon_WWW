@@ -30,9 +30,14 @@ namespace Services
             return repository.GetByWhere(x => true);
         }
 
+        public User GetUserById(int id)
+        {
+            return repository.GetByCondition(x => x.UserId == id);
+        }
+
         public User GetById(object id)
         {
-            return repository.GetById(id);
+            throw new NotImplementedException();
         }
 
         public User UpdateUser(User user)

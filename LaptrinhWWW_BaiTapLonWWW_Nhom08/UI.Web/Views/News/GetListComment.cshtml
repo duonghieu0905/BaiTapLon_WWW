@@ -69,6 +69,7 @@
 }
 @foreach (var item in Model)
 {
+    commentView = item;
 
     <div class="container mt-3">
         <div class="input-group mb-3">
@@ -107,7 +108,6 @@
         </div>
 
     }
-    commentView = item;
     <div class="container mt-3" id="@item.CommentId" style=" display: none;">
         <div class="input-group mt-3 " style="width: auto;margin-top: 10px; margin-left:150px; border: 1px solid rosybrown; border-radius: 13px;">
             <div class="input-group-append">
@@ -132,34 +132,34 @@
             </div>
         </div>
     </div>
-    <script>
-        $('.js-openDiv').click(function () {
-        var this_id = $(this).attr('id');
-        $('#@item.CommentId').show();
+    @*<script>
+                $('.js-openDiv').click(function () {
+                var this_id = $(this).attr('id');
+                $('#@item.CommentId').show();
+                });
+                $("@item.CommentId").click(function () {
+                var des = $('#description').val();
+                $.ajax({
+                url: "@Url.Action("AddComment")",
+                    method: "post",
+                    data: {
+                    CommentId: 1,
+                    Time: null,
+                    Description: des,
+                    Image: null,
+                    Role: @commentView.CommentId,
+                    NewsId: @ViewBag.NewID,
+                    AccountName: "huunguyen",
+                    Active: 1,
+                    Account: null,
+                    Newspaper: null
+                    },
+                    success: function (data) {
+                    alert("Sub Comment");
+                }
+            });
         });
-        $("@item.CommentId").click(function () {
-        var des = $('#description').val();
-        $.ajax({
-        url: "@Url.Action("AddComment")",
-            method: "post",
-            data: {
-            CommentId: 1,
-            Time: null,
-            Description: des,
-            Image: null,
-            Role: @commentView.CommentId,
-            NewsId: @ViewBag.NewID,
-            AccountName: "huunguyen",
-            Active: 1,
-            Account: null,
-            Newspaper: null
-            },
-            success: function (data) {
-            alert("Sub Comment");
-        }
-    });
-});
-    </script>
+            </script>*@
 }
 
 <div class="container">
@@ -179,10 +179,12 @@
     </div>
     <div class="input-group mt-3 col-6">
         <div id="div" class="col-md-offset-2 col-md-4">
-            <input type="submit" id="binhluan" value="Bình luận" class="btn btn-success" style="background-size:auto;" />
+            <input type="button" id="binhluan" value="Bình luận" class="btn btn-success" style="background-size:auto;" />
         </div>
     </div>
 </div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -220,7 +222,11 @@
 <script type="text/javascript">
 
     $("#binhluan").click(function () {
-        var des = $('#description').val();
+        @*if (@UI.Web.Controllers.SharedController.UserName==null) {
+            location.replace("/Login/Login")
+        }
+        else {*@
+            var des = $('#description').val();
         $.ajax({
             url: "@Url.Action("AddComment")",
             method: "post",
@@ -231,7 +237,7 @@
                 Image: null,
                 Role: 0,
                 NewsId: @ViewBag.NewID,
-                AccountName: "huunguyen",
+                AccountName: null,
                 Active: 1,
                 Account: null,
                 Newspaper: null
@@ -240,6 +246,7 @@
                 alert("Comment");
             }
         });
+
     });
 </script>
 

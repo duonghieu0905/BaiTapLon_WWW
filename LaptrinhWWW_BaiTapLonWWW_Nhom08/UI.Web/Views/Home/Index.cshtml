@@ -1,472 +1,449 @@
 ﻿@model IEnumerable<Entities.eNewspaper>
-<!doctype html>
-<html class="no-js" lang="zxx">
-<body>
-    <main>
-        <!-- Trending Area Start -->
-        <div class="trending-area fix">
-            <div class="container">
-                <div class="trending-main">
-                    <!-- Trending Tittle -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="trending-tittle">
-                                <strong>Top Thịnh Hành</strong>
-                                <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                                <div class="trending-animated">
-                                    <ul id="js-news" class="js-hidden">
-                                        <li class="news-item">Tình hình covid 19 hết sức phức tạp</li>
-                                        <li class="news-item">Việt Nam quyết tâm chiến thắng giặc COVID</li>
-                                        <li class="news-item">Trường Đại Học Công Nghiệp HCM</li>
-                                    </ul>
-                                </div>
 
+
+  
+<main>
+
+    <!-- Trending Area Start -->
+    <div class="trending-area fix">
+        <div class="container">
+            <div class="trending-main">
+                <div class="row" style="float:right">
+                    @using (Html.BeginForm())
+                    {
+                        <form class="form-inline md-form mr-auto mb-4">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" @Html.TextBox("SearchString")                   
+                            <button id="searchBtn" class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="text-wrap:avoid">Tìm kiếm</button>
+                        </form>
+
+                        @*<p>
+                                Nhập bài báo cần tìm: @Html.TextBox("SearchString")
+                                <input type="submit" value="Tìm kiếm" />
+                            </p>*@
+                    }
+                </div>
+                <!-- Trending Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="trending-tittle">
+                            <strong>Top Thịnh Hành</strong>
+                            <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+                            <div class="trending-animated">
+                                <ul id="js-news" class="js-hidden">
+                                    <li class="news-item">Tình hình covid 19 hết sức phức tạp</li>
+                                    <li class="news-item">Việt Nam quyết tâm chiến thắng giặc COVID</li>
+                                    <li class="news-item">Trường Đại Học Công Nghiệp HCM</li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <!-- Trending Top -->
-                            @foreach (var item in ViewBag.Top)
-                            {
-                                <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
-                                    <div class="trending-top mb-30">
-                                        <div class="trend-top-img">
-                                            <img src="~/assets/img/trending/trending_top.jpg" alt="">
-                                            <div class="trend-top-cap">
-                                                <span>@item.Title </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                @*<div class="trending-top mb-30">
-                                        <div class="trend-top-img">
-                                            <img src="~/assets/img/trending/trending_top.jpg" alt="">
-                                            <div class="trend-top-cap">
-                                                <span>@item.Title </span>
-                                                @Html.ActionLink("link", "DetailNews", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })
-                                            </div>
-                                        </div>
-                                    </div>*@
-                            }
 
-                            <!-- Trending Bottom -->
-                            <div class="trending-bottom">
-                                <div class="row">
-                                    @foreach (var item in ViewBag.Bot)
-                                    {
-                                        <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News"})' class="col-4">
-                                            @*<div class="col-lg-4">*@
-                                            <div class="single-bottom mb-35">
-                                                <div class="trend-bottom-img mb-30">
-                                                    <img src="~/assets/img/trending/trending_bottom1.jpg" alt="">
-                                                </div>
-                                                <div class="trend-bottom-cap">
-                                                    <span class="color1">@item.Title</span>
-                                                </div>
-                                            </div>
-                                            @*</div>*@
-                                        </a>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Riht content -->
-                        <div class="col-lg-4">
-                            @foreach (var item in ViewBag.Right)
-                            {
-
-                                <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
-                                    <div class="trand-right-single d-flex">
-                                        <div class="trand-right-img">
-                                            <img src="~/assets/img/DuLieuHinh/TestHinh.jpg" alt="" height="150" width="150">
-                                        </div>
-                                        <div class="trand-right-cap">
-                                            <span class="color1">@item.Title</span>
-
-
-                                        </div>
-                                    </div>
-                                </a>
-                            }
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Trending Area End -->
-        <!--   Weekly-News start -->
-        <div class="weekly-news-area pt-50">
-            <div class="container">
-                <div class="weekly-wrapper">
-                    <!-- section Tittle -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-tittle mb-30">
-                                <h3>Tin Top Trong Tuần</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="weekly-news-active dot-style d-flex dot-style">
-                                @foreach (var item in @ViewBag.Right)
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Trending Top -->
+                        @foreach (var item in ViewBag.Top)
+                        {
+                            <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
+                                <div class="trending-top mb-30">
+                                    <div class="trend-top-img">
+                                        <img src="../../../Uploads/images/@item.Image" alt="">
+                                        <div class="trend-top-cap">
+                                            <span>@item.Title </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            @*<div class="trending-top mb-30">
+                                    <div class="trend-top-img">
+                                        <img src="~/assets/img/trending/trending_top.jpg" alt="">
+                                        <div class="trend-top-cap">
+                                            <span>@item.Title </span>
+                                            @Html.ActionLink("link", "DetailNews", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })
+                                        </div>
+                                    </div>
+                                </div>*@
+                        }
+
+                        <!-- Trending Bottom -->
+                        <div class="trending-bottom">
+                            <div class="row">
+                                @foreach (var item in ViewBag.Bot)
                                 {
-                                    <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
-                                        <div class="weekly-single">
-                                            <div class="weekly-img">
-                                                <img src="~/assets/img/DuLieuHinh/TestHinh.jpg" alt="" height="150" width="150">
+                                    <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News"})' class="col-4">
+                                        @*<div class="col-lg-4">*@
+                                        <div class="single-bottom mb-35">
+                                            <div class="trend-bottom-img mb-30">
+                                                <img src="../../../Uploads/images/@item.Image" width="200" height="200"alt="">
                                             </div>
-                                            <div class="weekly-caption">
-                                                @*<span class="color1"></span>*@
-                                                <h4><a href="#">@item.Title</a></h4>
+                                            <div class="trend-bottom-cap">
+                                                <span class="color1">@item.Title</span>
                                             </div>
                                         </div>
+                                        @*</div>*@
                                     </a>
                                 }
                             </div>
                         </div>
                     </div>
+                    <!-- Riht content -->
+                    <div class="col-lg-4">
+                        @foreach (var item in ViewBag.Right)
+                        {
+
+                            <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
+                                <div class="trand-right-single d-flex">
+                                    <div class="trand-right-img">
+                                        <img src="../../../Uploads/images/@item.Image" alt="" style="width: 250px; height:200px;">
+                                    </div>
+                                    <div class="trand-right-cap">
+                                        <span class="color1">@item.Title</span>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- End Weekly-News -->
-        <!-- Whats New Start -->
-        <section class="whats-news-area pt-50 pb-20">
-            <div class="container">
+    </div>
+    <!-- Trending Area End -->
+    <!--   Weekly-News start -->
+    <div class="weekly-news-area pt-50">
+        <div class="container">
+            <div class="weekly-wrapper">
+                <!-- section Tittle -->
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="row d-flex justify-content-between">
-                            <div class="col-lg-3 col-md-3">
-                                <div class="section-tittle mb-30">
-                                    <h3>Tin gì mới</h3>
-                                </div>
-                            </div>
-                            <div class="col-lg-9 col-md-24">
-                                <div class="properties__button">
-                                    <!--Nav Button  -->
-                                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                                            <span class="navbar-toggler-icon"></span>
-                                        </button>
-                                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                            <ul class="navbar-nav">
-                                                <li class="nav-item active">
-                                                    <a data-id="1" class="nav-link" href="#">Pháp Luật <span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a data-id="2" class="nav-link" href="#">Đời Sống<span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a data-id="3" class="nav-link" href="#">Văn Hóa<span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a data-id="4" class="nav-link" href="#">Chính Trị<span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Thêm
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                        <a data-id="5" class="dropdown-item" href="#">Thể Thao</a>
-                                                        <a data-id="6" class="dropdown-item" href="#">Giải Trí</a>
-                                                        <a data-id="7" class="dropdown-item" href="#">Giáo Dục</a>
-                                                        <a data-id="8" class="dropdown-item" href="#">Sức Khỏe</a>
-                                                        <a data-id="9" class="dropdown-item" href="#">Du Lịch</a>
-                                                        <a data-id="10" class="dropdown-item" href="#">TC-KT</a>
-                                                        <a data-id="11" class="dropdown-item" href="#">Xe</a>
-                                                        <a data-id="12" class="dropdown-item" href="#">Game</a>
-                                                        <a data-id="13" class="dropdown-item" href="#">Thời Trang</a>
-                                                        <a data-id="14" class="dropdown-item" href="#">Thế Giới</a>
-                                                        <a data-id="15" class="dropdown-item" href="#">Khoa Học</a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </nav>
-                                    <!--End Nav Button  -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <div class="whats-news-caption">
-                                <div class="row" id="addNews">
-                                    @foreach (var item in ViewBag.GetAllBao)
-                                    {
-                                        <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
-
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="single-what-news mb-100">
-                                                    <div class="what-img">
-                                                        <img src="@item.Image">
-                                                    </div>
-                                                    <div class="what-cap">
-                                                        <span class="color1">@item.Title</span>
-                                                        <h4><a href="#"></a></h4>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    }
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <!-- Section Tittle -->
-                        <div class="section-tittle mb-40">
-                            <h3>Theo dõi chúng tôi</h3>
-                        </div>
-                        <!-- Flow Socail -->
-                        <div class="single-follow mb-45">
-                            <div class="single-box">
-                                <div class="follow-us d-flex align-items-center">
-                                    <div class="follow-social">
-                                        <a href="#"><img src="~/assets/img/news/icon-fb.png" alt=""></a>
-                                    </div>
-                                    <div class="follow-count">
-                                        <span>8,045</span>
-                                        <p>Fans</p>
-                                    </div>
-                                </div>
-                                <div class="follow-us d-flex align-items-center">
-                                    <div class="follow-social">
-                                        <a href="#"><img src="~/assets/img/news/icon-tw.png" alt=""></a>
-                                    </div>
-                                    <div class="follow-count">
-                                        <span>8,045</span>
-                                        <p>Fans</p>
-                                    </div>
-                                </div>
-                                <div class="follow-us d-flex align-items-center">
-                                    <div class="follow-social">
-                                        <a href="#"><img src="~/assets/img/news/icon-ins.png" alt=""></a>
-                                    </div>
-                                    <div class="follow-count">
-                                        <span>8,045</span>
-                                        <p>Fans</p>
-                                    </div>
-                                </div>
-                                <div class="follow-us d-flex align-items-center">
-                                    <div class="follow-social">
-                                        <a href="#"><img src="~/assets/img/news/icon-yo.png" alt=""></a>
-                                    </div>
-                                    <div class="follow-count">
-                                        <span>8,045</span>
-                                        <p>Fans</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- New Poster -->
-                        <div class="news-poster d-none d-lg-block">
-                            <img src="~/assets/img/news/news_card.jpg" alt="">
+                    <div class="col-lg-12">
+                        <div class="section-tittle mb-30">
+                            <h3>Tin Top Trong Tuần</h3>
                         </div>
                     </div>
                 </div>
-            </div>
-
-        </section>
-        <!-- Whats New End -->
-        <!--   Weekly2-News start -->
-        <!-- End Weekly-News -->
-        <!-- Start Youtube -->
-        <div class="youtube-area video-padding">
-            <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="video-items-active">
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                            </div>
-                            <div class="video-items text-center">
-                                <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="video-caption">
-                                <div class="top-caption">
-                                    <span class="color1">Politics</span>
-                                </div>
-                                <div class="bottom-caption">
-                                    <h2>Welcome To The Best Model Winner Contest At Look of the year</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit lorem ipsum dolor sit.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="testmonial-nav text-center">
-                                <div class="single-video">
-                                    <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="video-intro">
-                                        <h4>Welcotme To The Best Model Winner Contest</h4>
+                        <div class="weekly-news-active dot-style d-flex dot-style">
+                            @foreach (var item in @ViewBag.Right)
+                            {
+                                <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
+                                    <div class="weekly-single">
+                                        <div class="weekly-img">
+                                            <img src="../../../Uploads/images/@item.Image" alt="">
+                                        </div>
+                                        <div class="weekly-caption">
+                                            @*<span class="color1"></span>*@
+                                            <h4><a href="#">@item.Title</a></h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="single-video">
-                                    <iframe src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="video-intro">
-                                        <h4>Welcotme To The Best Model Winner Contest</h4>
-                                    </div>
-                                </div>
-                                <div class="single-video">
-                                    <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="video-intro">
-                                        <h4>Welcotme To The Best Model Winner Contest</h4>
-                                    </div>
-                                </div>
-                                <div class="single-video">
-                                    <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="video-intro">
-                                        <h4>Welcotme To The Best Model Winner Contest</h4>
-                                    </div>
-                                </div>
-                                <div class="single-video">
-                                    <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="video-intro">
-                                        <h4>Welcotme To The Best Model Winner Contest</h4>
-                                    </div>
-                                </div>
-                            </div>
+                                </a>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Start youtube -->
-        <!--  Recent Articles start -->
-        <div class="recent-articles">
-            <div class="container">
-                <div class="recent-wrapper">
-                    <!-- section Tittle -->
-                    <div class="row">
-                        <div class="col-lg-12">
+    </div>
+    <!-- End Weekly-News -->
+    <!-- Whats New Start -->
+    <section class="whats-news-area pt-50 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-lg-3 col-md-3">
                             <div class="section-tittle mb-30">
-                                <h3>Recent Articles</h3>
+                                <h3>Tin gì mới</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="recent-active dot-style d-flex dot-style">
-                                <div class="single-recent mb-100">
-                                    <div class="what-img">
-                                        <img src="~/assets/img/news/recent1.jpg" alt="">
-                                    </div>
-                                    <div class="what-cap">
-                                        <span class="color1">Night party</span>
-                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    </div>
-                                </div>
-                                <div class="single-recent mb-100">
-                                    <div class="what-img">
-                                        <img src="~/assets/img/news/recent2.jpg" alt="">
-                                    </div>
-                                    <div class="what-cap">
-                                        <span class="color1">Night party</span>
-                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    </div>
-                                </div>
-                                <div class="single-recent mb-100">
-                                    <div class="what-img">
-                                        <img src="~/assets/img/news/recent3.jpg" alt="">
-                                    </div>
-                                    <div class="what-cap">
-                                        <span class="color1">Night party</span>
-                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    </div>
-                                </div>
-                                <div class="single-recent mb-100">
-                                    <div class="what-img">
-                                        <img src="~/assets/img/news/recent2.jpg" alt="">
-                                    </div>
-                                    <div class="what-cap">
-                                        <span class="color1">Night party</span>
-                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Recent Articles End -->
-        <!--Start pagination -->
-        <div class="pagination-area pb-45 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="single-wrap d-flex justify-content-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item"><a class="page-link" href="#"><span class="flaticon-arrow roted"></span></a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                    <li class="page-item"><a class="page-link" href="#"><span class="flaticon-arrow right-arrow"></span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <div class="col-lg-9 col-md-24">
+                            <div class="properties__button">
+                                <!--Nav Button  -->
+                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <!-- End pagination  -->
-        <script type="text/javascript">
-            $("a").click(function () {
-                var btn = $(this);
-                var id = btn.data('id');
-                $.ajax({
-                    url: "@Url.Action("getNew")",
-                    data: { id: id },
-                    dataType: "json",
-                    type: "Post",
-                    success: function (json) {
-                        $('#addNews').html("");
-                        $.each(json, function (index,item) {
-                            var img = item.Image;
-                            var title = item.Title;
-                            var topic = item.TopicName;
-                            var idbao = item.NewsId;
-                            var row =`<div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                  <img src="${img}">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">${topic}</span>
-                                                <h4><a href="#">${title}</a></h4>
-                                                 <a class="page-link" href="https://localhost:44311/News/DetailNews/${idbao}?style=color%3A%23ff0000">link</a>
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item active">
+                                                <a data-id="1" class="nav-link" href="#">Pháp Luật <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-id="2" class="nav-link" href="#">Đời Sống<span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-id="3" class="nav-link" href="#">Văn Hóa<span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-id="4" class="nav-link" href="#">Chính Trị<span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Thêm
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                    <a data-id="5" class="dropdown-item" href="#">Thể Thao</a>
+                                                    <a data-id="6" class="dropdown-item" href="#">Giải Trí</a>
+                                                    <a data-id="7" class="dropdown-item" href="#">Giáo Dục</a>
+                                                    <a data-id="8" class="dropdown-item" href="#">Sức Khỏe</a>
+                                                    <a data-id="9" class="dropdown-item" href="#">Du Lịch</a>
+                                                    <a data-id="10" class="dropdown-item" href="#">TC-KT</a>
+                                                    <a data-id="11" class="dropdown-item" href="#">Xe</a>
+                                                    <a data-id="12" class="dropdown-item" href="#">Game</a>
+                                                    <a data-id="13" class="dropdown-item" href="#">Thời Trang</a>
+                                                    <a data-id="14" class="dropdown-item" href="#">Thế Giới</a>
+                                                    <a data-id="15" class="dropdown-item" href="#">Khoa Học</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <!--End Nav Button  -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="whats-news-caption">
+                            <div class="row" id="addNews">
+                                @foreach (var item in ViewBag.GetAllBao)
+                                {
+                                    <a href='@Url.Action("DetailNews", "News", new { id = item.NewsId, Controller = "News", @style = "color:#ff0000" })'>
+
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="../../../Uploads/images/@item.Image" alt="" style="width: 250px; height:250px;">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">@item.Title</span>
+                                                    <h4><a href="#"></a></h4>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>`
-                            $('#addNews').append(row);
-                        }),
+                                    </a>
+                                }
 
-                        console.log(json);
-                    },
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle mb-40">
+                        <h3>Theo dõi chúng tôi</h3>
+                    </div>
+                    <!-- Flow Socail -->
+                    <div class="single-follow mb-45">
+                        <div class="single-box">
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="~/assets/img/news/icon-fb.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="~/assets/img/news/icon-tw.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="~/assets/img/news/icon-ins.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="~/assets/img/news/icon-yo.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- New Poster -->
+                    <div class="news-poster d-none d-lg-block">
+                        <img src="~/assets/img/news/news_card.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                });
-            });
-        </script>
-    </main>
-</body>
-</html>
+    </section>
+    <!-- Whats New End -->
+    <!--   Weekly2-News start -->
+    <!-- End Weekly-News -->
+    <!-- Start Youtube -->
+    <div class="youtube-area video-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="video-items-active">
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/cGz2a7ccAs0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/kT2LHLWa4Hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/yXOWoOfDp3s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/jgZkrA8E5do" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/6t-MjBazs3o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="video-caption">
+                            <div class="top-caption">
+                                <span class="color1">Politics</span>
+                            </div>
+                            <div class="bottom-caption">
+                                <h2>NHÓM 08 AZNEWS</h2>
+                                <p>Nhóm 8 Vip Pro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testmonial-nav text-center">
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/z726jKdzbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Tin tức 24h mới nhất hôm nay 8/7 Tin sáng | Mưa lũ lớn nhất 10 năm CHÂU Á gồng mình chống lũ lụt</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/qn8rav2NP9o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Mua chung cư mini là 'mua nhà' hay 'thuê nhà dài hạn'?</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/BYtfwk7GxKs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Trường đại học tại Mỹ lên kế hoạch để giúp du học sinh không phải về nước</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/EnfTIrLZzJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Jonathan Galindo - Trò đùa chết người mới sau "cá voi xanh"</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/xkwypBumRtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Điểm Tuần: IQ VÔ CỰC</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Start youtube -->
+    <!--  Recent Articles start -->
+    <div class="recent-articles">
+        <div class="container">
+            <div class="recent-wrapper">
+                <!-- section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle mb-30">
+                            <h3>Recent Articles</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="recent-active dot-style d-flex dot-style">
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="~/assets/img/news/recent1.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="~/assets/img/news/recent2.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="~/assets/img/news/recent3.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="~/assets/img/news/recent2.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Recent Articles End -->
+    <!--Start pagination -->
+    <div class="pagination-area pb-45 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="single-wrap d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-start">
+                                <li class="page-item"><a class="page-link" href="#"><span class="flaticon-arrow roted"></span></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><span class="flaticon-arrow right-arrow"></span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End pagination  -->
+
+</main>
+
+
+

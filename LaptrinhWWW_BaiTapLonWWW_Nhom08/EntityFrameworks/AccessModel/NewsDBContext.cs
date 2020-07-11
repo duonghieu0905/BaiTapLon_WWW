@@ -13,6 +13,7 @@ namespace EntityFrameworks.AccessModel
         public NewsDBContext():base("NewsConnectionstring")
         {
             this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = false;
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Account> Accounts { get; set; }

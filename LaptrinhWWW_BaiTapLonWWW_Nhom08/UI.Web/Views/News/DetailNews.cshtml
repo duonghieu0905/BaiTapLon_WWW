@@ -5,8 +5,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div>
-                    <h4>Newspaper</h4>
-                    <hr />
+                 
                     <dl style="width:70%" class="dl-horizontal">
                         <dt>
                             @Html.DisplayNameFor(model => model.PublicationDate)
@@ -25,7 +24,7 @@
 
                 <div class="row">
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form mb-80" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        @*<form class="form-contact contact_form mb-80" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -51,7 +50,7 @@
                             <div class="form-group mt-3">
                                 <button type="submit" class="button button-contactForm boxed-btn">Send</button>
                             </div>
-                        </form>
+                        </form>*@
                     </div>
                 </div>
             </div>
@@ -110,6 +109,6 @@
     </div>
 </div>
 
-@{ Html.RenderAction("GetListComment", "News", new { newsid = Model.NewsId }); }
+@{ Html.RenderAction("GetListComment", "News", new { newsid = 1 }); }
 
 

@@ -64,7 +64,7 @@ namespace UI.Web.Controllers
                 return RedirectToAction("Login", "Login");
             else
             {
-                var account = Session["account"] as Account;
+                var account = Session["account"] as AccountLogin;
                 var listtopic = f["topicstring"].ToString().Split(new char[] { ',' });
                 Newspaper news = new Newspaper();
                 NewspaperService svn = new NewspaperService();
@@ -85,13 +85,13 @@ namespace UI.Web.Controllers
             }
             
         }
-        public ActionResult UpdateNews(int newsid=11)
+        public ActionResult UpdateNews(int newsid=2)
         {
             if (Session["account"] is null)
                 return RedirectToAction("Login", "Login");
             else
             {
-                var account = Session["account"] as Account;
+                var account = Session["account"] as AccountLogin;
                 NewspaperService svn = new NewspaperService();
                 var result = svn.GetById(newsid);
                 MappingService svm = new MappingService();
@@ -129,7 +129,7 @@ namespace UI.Web.Controllers
                 return RedirectToAction("Login", "Login");
             else
             {
-                var account = Session["account"] as Account;
+                var account = Session["account"] as AccountLogin;
                 var listtopic = f["topicstring"].ToString().Split(new char[] { ',' });
                 Newspaper news = new Newspaper();
                 NewspaperService svn = new NewspaperService();

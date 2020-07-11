@@ -12,5 +12,6 @@ namespace UI.Web.Models
         public int UserId { get; set; }
         public int Active { get; set; }
         public int Role { get; set; }
+        public string Email { get; set; }
     }
 }

@@ -2,71 +2,73 @@
 @{
     ViewBag.Title = "UpdateNews";
 }
-    <div style="margin:0 auto;text-align:center">
-        <div style="text-align:center; margin:0 auto; width:80%;">
-            @using (Html.BeginForm("UpdateNews", "News", FormMethod.Post, new { @enctype = "multipart/form-data" }))
-            {
-                @Html.AntiForgeryToken()
+<div style="margin:0 auto;text-align:center">
+    <div style="text-align:center; margin:0 auto; width:80%;">
+        @using (Html.BeginForm("UpdateNews", "News", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
-                    <h1>Cập nhật bài báo</h1>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        <h4>Tiêu đề bài báo</h4>
-                        <div class="col-md-12">
-                            @Html.HiddenFor(model => model.NewsId)
-                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class="form-control" } })
-                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { Style = "display:block" } })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <h4>Tiêu đề hình ảnh</h4>
-                        <div class="col-md-12">
-                            <img src="#" id="review" style="width:80%;height:400px; margin-bottom:20px" />
-                            <br />
-                            <button type="button" id="select" class="btn btn-primary">Chọn ảnh </button>
-                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <h4>Nội dung bài báo</h4>
-                        <div class="col-md-12">
-                            <br />
-
-                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <h4>Chọn chủ đề cho bài báo</h4>
-                        <div style="width:90%">
-                            @for (int i = 0; i < Model.Topic.Count; i++)
-                            {
-
-                                @Html.TextBoxFor(m => m.Topic[i].TopicName)
-                                <input type="checkbox" class="form-check-input checktopic" value=@Model.Topic[i].TopicId.ToString()>
-                            }
-                        </div>
-
-                        <input type="text" id="topicstring" name="topicstring" style="display:none" />
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Cập nhật bài báo" class="btn btn-default" />
-                        </div>
+            <div class="form-horizontal">
+                <h1>Cập nhật bài báo</h1>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <h4>Tiêu đề bài báo</h4>
+                    <div class="col-md-12">
+                        @Html.HiddenFor(model => model.NewsId)
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Image, new { htmlAttributes = new { Style = "display:none" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4>Tiêu đề hình ảnh</h4>
+                    <div class="col-md-12">
+                        <img src="#" id="review" style="width:80%;height:400px; margin-bottom:20px" />
+                        <br />
+                        <button type="button" id="select" class="btn btn-primary">Chọn ảnh </button>
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4>Nội dung bài báo</h4>
+                    <div class="col-md-12">
+                        <br />
 
-            }
-        </div>
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4>Chọn chủ đề cho bài báo</h4>
+                    <div style="width:90%">
+                        @for (int i = 0; i < Model.Topic.Count; i++)
+                        {
+
+                            @Html.TextBoxFor(m => m.Topic[i].TopicName)
+                            <input type="checkbox" class="form-check-input checktopic" value=@Model.Topic[i].TopicId.ToString()>
+                        }
+                    </div>
+
+                    <input type="text" id="topicstring" name="topicstring" style="display:none" />
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Cập nhật bài báo" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+
+        }
     </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 
 
 <script src="~/DataCK/ckeditor/ckeditor.js"></script>
@@ -100,7 +102,7 @@
             $('#topicstring').val(checkedValue);
         });
         CKEDITOR.instances["Description"].setData(document.getElementById("Description").value);
-      
+
         var str = '@ViewBag.GetTopic';
         $('#topicstring').val(str);
         var arraystr = str.split(",");

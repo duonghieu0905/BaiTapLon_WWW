@@ -11,18 +11,27 @@ namespace UI.Web.Controllers
 {
     public class JournalistController : Controller
     {
+        private NewspaperService _newsService;
         // GET: Journalist
         private UserService _userService;
         private AccountService _accountService;
         public JournalistController()
         {
+            _newsService = new NewspaperService();
             _userService = new UserService();
             _accountService = new AccountService();
         }
         public ActionResult Index()
         {
-            var list = _userService.ListJournalist(2);
-            return View(list);
+            if (UI.Web.Controllers.SharedController.Role == 3)
+            {
+                var list = _userService.ListJournalist(2);
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
         }
         public ActionResult AddJournalist()
         {
@@ -126,6 +135,27 @@ namespace UI.Web.Controllers
             if (s == null)
                 return HttpNotFound();
             return View(journalist);
+        }
+        [HttpPost]
+        public JsonResult GetAllNews(int id)
+        {
+
+            var listNews = (from us in _userService.GetAll()
+                            join acc in _accountService.GetAll() on us.UserId equals acc.UserId
+                            join
+        news in _newsService.GetAll() on acc.AccountName equals news.Journalist
+                            where (us.UserId == id)
+                            select new
+                            {
+                                newid = news.NewsId,
+                                day = Convert.ToDateTime(news.PublicationDate),
+                                image = news.Image,
+                                title = news.Title,
+                                active = news.Active,
+                                description = news.Description
+
+                            }).ToList();
+            return Json(listNews, JsonRequestBehavior.AllowGet);
         }
     }
 }

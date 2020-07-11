@@ -9,10 +9,13 @@ namespace UI.Web.Controllers
     public class SharedController : Controller
     {
         public static int Role;
+        public static string Email;
+        public static string UserName;
         // GET: Shared
         public SharedController()
         {
             Role = 0;
+            Email = "";
         }
         public ActionResult Index()
         {
